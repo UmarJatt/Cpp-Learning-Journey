@@ -1,6 +1,17 @@
+/*
+    This program demonstrates how to use a class with constructors and dynamic arrays:
+
+    1. The Student class has a default and parameterized constructor.
+    2. We can set data using a member function.
+    3. We create a dynamic array of Student objects using 'new'.
+    4. Input data for each student and display it.
+    5. Free the memory after use with 'delete[]'.
+*/
+
 #include <iostream>
 using namespace std;
 
+// Class to store student information
 class Student {
     string name;
     int age;
@@ -18,11 +29,13 @@ public:
         age = a;
     }
 
+    // Function to set data
     void setData(string n, int a) {
         name = n;
         age = a;
     }
 
+    // Function to display student details
     void display() {
         cout << "Name: " << name << ", Age: " << age << endl;
     }
@@ -33,7 +46,7 @@ int main() {
     cout << "Enter number of students: ";
     cin >> n;
 
-    // Dynamically create array of objects using pointer
+    // Create dynamic array of Student objects
     Student* students = new Student[n];
 
     // Input data for each student
@@ -45,16 +58,16 @@ int main() {
         cout << "Enter age of student " << i + 1 << ": ";
         cin >> age;
 
-        students[i].setData(name, age);  // Using pointer with array index
+        students[i].setData(name, age);  // Store data in array
     }
 
-    // Display student details
+    // Display all students
     cout << "\nStudent Details:\n";
     for (int i = 0; i < n; i++) {
         students[i].display();
     }
 
-    // Free dynamically allocated memory
+    // Free allocated memory
     delete[] students;
 
     return 0;
