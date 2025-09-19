@@ -1,22 +1,27 @@
+// This program demonstrates the use of break and continue statements in C++
+// 1. Break in for loop and while loop
+// 2. Continue in for loop and while loop
+
 #include <iostream>
 using namespace std;
 
 int main() {
+
     // =========================
-    // Break statement example
+    // 1️⃣ Break Statement in For Loop
     // =========================
     cout << "===== Break Statement =====" << endl;
     for (int i = 1; i <= 10; i++) {
         if (i == 6) {
             cout << "Breaking at i = " << i << endl;
-            break; // exit the loop
+            break; // exit the loop immediately
         }
         cout << i << " ";
     }
     cout << endl;
 
     // =========================
-    // Continue statement example
+    // 2️⃣ Continue Statement in For Loop
     // =========================
     cout << "\n===== Continue Statement =====" << endl;
     for (int i = 1; i <= 10; i++) {
@@ -28,19 +33,19 @@ int main() {
     cout << endl;
 
     // =========================
-    // Break in while loop
+    // 3️⃣ Break in While Loop
     // =========================
     cout << "\nBreak in while loop example:" << endl;
     int j = 1;
     while (j <= 10) {
-        if (j == 5) break;
+        if (j == 5) break; // exit loop when j = 5
         cout << j << " ";
         j++;
     }
     cout << endl;
 
     // =========================
-    // Continue in while loop
+    // 4️⃣ Continue in While Loop
     // =========================
     cout << "\nContinue in while loop example:" << endl;
     int k = 0;
@@ -51,5 +56,5 @@ int main() {
     }
     cout << endl;
 
-    return 0;
+    return 0; // end of program
 }
