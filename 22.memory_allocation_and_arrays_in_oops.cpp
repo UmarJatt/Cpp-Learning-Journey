@@ -1,16 +1,24 @@
+// This program demonstrates:
+// 1. Dynamic memory allocation in C++
+// 2. Using pointers inside a class
+// 3. Constructor and destructor for memory management
+
 #include <iostream>
 using namespace std;
 
+// =========================
+// Class Definition
+// =========================
 class Student {
 private:
-    int *marks;  // pointer for dynamic array
-    int size;
+    int *marks;  // pointer to store dynamic array of marks
+    int size;    // number of subjects
 
 public:
-    // Constructor to allocate memory
+    // Constructor: allocates memory dynamically
     Student(int n) {
         size = n;
-        marks = new int[size]; // dynamic allocation
+        marks = new int[size]; // allocate memory for 'size' integers
     }
 
     // Function to input marks
@@ -30,7 +38,7 @@ public:
         cout << endl;
     }
 
-    // Destructor to free memory
+    // Destructor: frees allocated memory
     ~Student() {
         delete[] marks;
         cout << "Memory freed!" << endl;
@@ -38,13 +46,14 @@ public:
 };
 
 int main() {
+
     int n;
     cout << "How many subjects? ";
     cin >> n;
 
-    Student s(n); // object with dynamic array
-    s.inputMarks();
-    s.displayMarks();
+    Student s(n); // create object with dynamic array
+    s.inputMarks();    // input marks
+    s.displayMarks();  // display marks
 
-    return 0;
+    return 0; // end of program
 }
