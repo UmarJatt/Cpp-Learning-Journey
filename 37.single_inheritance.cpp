@@ -1,3 +1,35 @@
+/*
+This program demonstrates different types of inheritance in C++:
+
+1. Base class: Person
+   - Contains protected members: name and age
+   - Has methods to set and show these values
+
+2. Derived classes:
+
+   a) Student : public Person
+      - Public inheritance: 
+        * Base class public members remain public in derived class
+      - Adds id
+      - Can access base class methods directly
+
+   b) Teacher : protected Person
+      - Protected inheritance:
+        * Base class public members become protected in derived class
+      - Adds subject
+      - Accessible only inside derived class
+
+   c) Staff : private Person
+      - Private inheritance:
+        * Base class public members become private in derived class
+      - Adds role
+      - Accessible only inside derived class
+
+3. In main:
+   - Create objects of Student, Teacher, Staff
+   - Set and display their data using derived class methods
+*/
+
 #include <iostream>
 using namespace std;
 
