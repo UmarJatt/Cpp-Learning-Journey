@@ -1,31 +1,35 @@
+// This program demonstrates:
+// 1. Different variable scopes (global, local, block)
+// 2. Data types in C++
+// 3. Type casting
+
 #include <iostream>
 using namespace std;
 
-// Global variable (accessible everywhere)
+// Global variable - can be accessed anywhere in the program
 int globalVar = 100;
 
+// Function to show local and global variable usage
 void exampleFunction() {
-    // Local variable (scope limited to this function)
-    int localVar = 50;
+    int localVar = 50; // local variable only inside this function
     cout << "Inside function - localVar: " << localVar << endl;
     cout << "Inside function - globalVar: " << globalVar << endl;
 }
 
 int main() {
-    // Local variable in main
-    int mainVar = 10;
-
+    int mainVar = 10; // local variable inside main
     cout << "Inside main - mainVar: " << mainVar << endl;
     cout << "Inside main - globalVar: " << globalVar << endl;
 
+    // Call function to see variable scopes
     exampleFunction();
 
     // Block scope example
     if (true) {
-        int blockVar = 200;
+        int blockVar = 200; // only accessible inside this block
         cout << "Inside block - blockVar: " << blockVar << endl;
     }
-    // blockVar is not accessible here
+    // blockVar cannot be used here
 
     // =========================
     // Data types in C++
@@ -44,8 +48,8 @@ int main() {
     cout << "bool: " << boolVar << endl;
 
     // Type casting example
-    double result = (double)integerVar / 2;
+    double result = (double)integerVar / 2; // convert int to double before division
     cout << "Type casting int to double: " << result << endl;
 
-    return 0;
+    return 0; // end of program
 }
