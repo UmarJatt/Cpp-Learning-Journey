@@ -1,3 +1,26 @@
+/*
+This program demonstrates **multilevel inheritance** in C++:
+
+1. Base class: Person
+   - Members: name, age (protected)
+   - Methods: setPerson(), showPerson()
+
+2. Derived class: Student (inherits from Person)
+   - Adds: id (protected)
+   - Methods: setStudent(), showStudent()
+   - Can access Person's protected members
+
+3. Derived class: Graduate (inherits from Student)
+   - Adds: thesisTitle (private by default)
+   - Methods: setGraduate(), showGraduate()
+   - Can access Student's protected members, which include id, name, age
+
+4. Main function:
+   - Create a Graduate object
+   - Set all details using setGraduate()
+   - Display details using showGraduate()
+*/
+
 #include <iostream>
 using namespace std;
 
