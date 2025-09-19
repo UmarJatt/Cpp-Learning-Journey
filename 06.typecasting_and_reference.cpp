@@ -1,14 +1,19 @@
+// This program demonstrates:
+// 1. Typecasting in C++ (implicit, explicit, C-style)
+// 2. Reference variables and how they work
+
 #include <iostream>
 using namespace std;
 
+// Function to show typecasting examples
 void typeCastingExample() {
     int a = 10, b = 3;
 
-    // Implicit typecasting (automatic conversion)
+    // Implicit/explicit typecasting: converting b to double before division
     double result1 = a / (double)b; 
     cout << "Implicit/Explicit Typecasting: " << result1 << endl;
 
-    // Explicit typecasting
+    // Explicit typecasting using static_cast
     double result2 = static_cast<double>(a) / b; 
     cout << "Explicit Typecasting using static_cast: " << result2 << endl;
 
@@ -17,16 +22,23 @@ void typeCastingExample() {
     cout << "C-style Typecasting: " << result3 << endl;
 }
 
+// Function to show reference variable examples
 void referenceVariableExample() {
     int x = 100;
-    int &ref = x; // ref is reference to x
+
+    // Creating a reference variable 'ref' that refers to 'x'
+    int &ref = x;
 
     cout << "Original x: " << x << endl;
-    ref = 200; // changing ref also changes x
+
+    // Modifying the reference changes the original variable
+    ref = 200;
     cout << "After modifying ref, x: " << x << endl;
 
     int y = 50;
-    ref = y; // ref now changes x to value of y (x = 50)
+
+    // Assigning y to ref changes x to the value of y
+    ref = y;
     cout << "After assigning y to ref, x: " << x << endl;
 }
 
@@ -37,5 +49,5 @@ int main() {
     cout << "\n===== Reference Variable Examples =====" << endl;
     referenceVariableExample();
 
-    return 0;
+    return 0; // end of program
 }
