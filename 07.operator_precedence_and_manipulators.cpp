@@ -1,46 +1,57 @@
+// This program demonstrates:
+// 1. Operator precedence in expressions
+// 2. Using manipulators to format output (like setprecision, setw, alignment, boolalpha)
+
 #include <iostream>
-#include <iomanip>  // for manipulators
+#include <iomanip>  // for manipulators like setprecision, setw
 using namespace std;
 
 int main() {
+
     // =========================
-    // Operator Precedence Example
+    // 1️⃣ Operator Precedence Example
     // =========================
     int a = 10, b = 5, c = 2;
 
-    int result1 = a + b * c; // * has higher precedence than +
+    // Multiplication (*) happens before addition (+)
+    int result1 = a + b * c;
     cout << "a + b * c = " << result1 << endl; 
 
-    int result2 = (a + b) * c; // parentheses change precedence
+    // Parentheses change the order: addition happens first
+    int result2 = (a + b) * c;
     cout << "(a + b) * c = " << result2 << endl;
 
-    int result3 = a / b + c; // / has higher precedence than +
+    // Division (/) happens before addition (+)
+    int result3 = a / b + c;
     cout << "a / b + c = " << result3 << endl;
 
     // =========================
-    // Manipulators Example
+    // 2️⃣ Manipulators Example
     // =========================
     double pi = 3.14159265;
 
-    cout << fixed; // fixed-point notation
-    cout << setprecision(2); // 2 decimal places
+    // Fixed-point notation with 2 decimal places
+    cout << fixed << setprecision(2);
     cout << "Pi with 2 decimal places: " << pi << endl;
 
-    cout << setw(10); // set width
+    // Set width to 10 spaces
+    cout << setw(10);
     cout << "Width 10: " << pi << endl;
 
-    cout << left; // left alignment
-    cout << setw(10) << "Left: " << pi << endl;
+    // Left alignment
+    cout << left << setw(10) << "Left: " << pi << endl;
 
-    cout << right; // right alignment
-    cout << setw(10) << "Right: " << pi << endl;
+    // Right alignment
+    cout << right << setw(10) << "Right: " << pi << endl;
 
-    cout << boolalpha; // print bool as true/false
+    // Print boolean as true/false
+    cout << boolalpha;
     bool flag = true;
     cout << "Boolean value: " << flag << endl;
 
-    cout << noboolalpha; // back to 1/0
+    // Back to numeric (1/0)
+    cout << noboolalpha;
     cout << "Boolean value (numeric): " << flag << endl;
 
-    return 0;
+    return 0; // end of program
 }
