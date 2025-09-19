@@ -1,47 +1,50 @@
+/*
+    This program demonstrates how to use a C++ vector (dynamic array):
+
+    1️⃣ Create a vector
+    2️⃣ Add elements (push_back, insert)
+    3️⃣ Remove elements (pop_back, erase)
+    4️⃣ Access elements (front, back)
+    5️⃣ Check size and capacity
+    6️⃣ Sort the vector
+    7️⃣ Clear the vector
+*/
+
 #include <iostream>
-#include <list>
+#include <vector>
 #include <algorithm>
 using namespace std;
 
 int main() {
-    // 1️⃣ Create a list
-    list<int> lst = {10, 20, 30, 40};
+    // 1️⃣ Create a vector with some initial elements
+    vector<int> v = {5, 2, 8, 1};
 
     // 2️⃣ Add elements
-    lst.push_back(50);   // add at end
-    lst.push_front(5);   // add at beginning
-    auto it = lst.begin();
-    advance(it, 2);      // move iterator to 3rd position
-    lst.insert(it, 15);  // insert 15 at 3rd position
+    v.push_back(10);            // add at the end
+    v.insert(v.begin() + 2, 7); // insert 7 at index 2
 
     // 3️⃣ Remove elements
-    lst.pop_back();       // remove last element
-    lst.pop_front();      // remove first element
-    lst.remove(20);       // remove element with value 20
+    v.pop_back();       // remove last element
+    v.erase(v.begin()); // remove first element
 
-    // 4️⃣ Access elements (iterate using for-each)
-    cout << "List elements: ";
-    for (int x : lst) cout << x << " ";
+    // 4️⃣ Access elements
+    cout << "Vector elements: ";
+    for (int x : v) cout << x << " ";
+    cout << endl;
+    cout << "First element: " << v.front() << ", Last element: " << v.back() << endl;
+
+    // 5️⃣ Check size and capacity
+    cout << "Vector size: " << v.size() << ", capacity: " << v.capacity() << endl;
+
+    // 6️⃣ Sort vector
+    sort(v.begin(), v.end());
+    cout << "Sorted vector: ";
+    for (int x : v) cout << x << " ";
     cout << endl;
 
-    // 5️⃣ Size of list
-    cout << "List size: " << lst.size() << endl;
-
-    // 6️⃣ Sort list
-    lst.sort();
-    cout << "Sorted list: ";
-    for (int x : lst) cout << x << " ";
-    cout << endl;
-
-    // 7️⃣ Reverse list
-    lst.reverse();
-    cout << "Reversed list: ";
-    for (int x : lst) cout << x << " ";
-    cout << endl;
-
-    // 8️⃣ Clear list
-    lst.clear();
-    cout << "List cleared. Size now: " << lst.size() << endl;
+    // 7️⃣ Clear vector
+    v.clear();
+    cout << "Vector cleared. Size now: " << v.size() << endl;
 
     return 0;
 }
