@@ -1,3 +1,22 @@
+/*
+This program demonstrates Single Inheritance in C++:
+
+1. Base class: Person
+   - Contains public members: name and age
+   - Has a method to set these values
+
+2. Derived class: Student
+   - Inherits publicly from Person
+   - Adds a new member: id
+   - Has a method to set student data (name, age, id)
+   - Has a method to display student information
+
+3. In main:
+   - We create a Student object
+   - Set its data using setStudent()
+   - Display all information using showStudent()
+*/
+
 #include <iostream>
 using namespace std;
 
