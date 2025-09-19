@@ -1,15 +1,23 @@
+/*
+    This program demonstrates **abstract classes and pure virtual functions**:
+
+    1. `Shape` is an abstract base class with pure virtual functions `area()` and `draw()`.
+    2. Derived classes `Circle` and `Rectangle` implement the pure virtual functions.
+    3. You **cannot create objects** of an abstract class.
+    4. A base class pointer can point to derived class objects and call the correct functions at runtime.
+*/
+
 #include <iostream>
 using namespace std;
 
-// Abstract Base Class
+// Abstract base class
 class Shape {
 public:
-    // Pure virtual function → makes this class abstract
-    virtual void area() = 0;  
-    virtual void draw() = 0;  
+    virtual void area() = 0;   // Pure virtual function
+    virtual void draw() = 0;   // Pure virtual function
 };
 
-// Derived Class 1
+// Derived class: Circle
 class Circle : public Shape {
     double radius;
 public:
@@ -24,7 +32,7 @@ public:
     }
 };
 
-// Derived Class 2
+// Derived class: Rectangle
 class Rectangle : public Shape {
     double length, width;
 public:
@@ -40,19 +48,19 @@ public:
 };
 
 int main() {
-    // Shape s; ❌ Not allowed → Shape is abstract (cannot create object)
-
-    Shape* shapePtr;  // Base class pointer
+    Shape* shapePtr;  // Pointer to base class
 
     Circle c(5);
     Rectangle r(4, 6);
 
+    // Base pointer points to Circle
     shapePtr = &c;
     shapePtr->area();
     shapePtr->draw();
 
     cout << "-----------------------------" << endl;
 
+    // Base pointer points to Rectangle
     shapePtr = &r;
     shapePtr->area();
     shapePtr->draw();
