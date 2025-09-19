@@ -1,6 +1,17 @@
-#include <iostream>
-#include <iomanip> // for formatting
-#include <string>  // for string variables
+// This program demonstrates basic C++ concepts:
+// - Comments
+// - Variables of different types
+// - Constants
+// - Multiple variable declarations
+// - Type casting
+// - User input
+// - Escape sequences
+// - Output formatting
+
+#include <iostream>   // for input and output
+#include <iomanip>    // for formatting output like setprecision
+#include <string>     // for using string variables
+
 using namespace std;
 
 int main() {
@@ -8,48 +19,36 @@ int main() {
     // =========================
     // 1️⃣ Comments in C++
     // =========================
-
-    // This is a single-line comment
-
-    /*
-        This is a multi-line comment
-        You can write multiple lines here
-    */
-
-    /// This is a documentation comment (used in some IDEs)
+    // Single-line comment
+    /* Multi-line comment
+       Can write multiple lines here */
+    /// Documentation comment (used in some IDEs)
 
     // =========================
-    // 2️⃣ Variables in C++
+    // 2️⃣ Variables
     // =========================
-
-    // Integer variable
-    int age = 19;
+    int age = 19;           // integer variable
     cout << "Age: " << age << endl;
 
-    // Float variable
-    float height = 5.9f;
+    float height = 5.9f;    // float variable
     cout << "Height: " << height << " feet" << endl;
 
-    // Double variable (more precision than float)
-    double weight = 72.5;
+    double weight = 72.5;   // double variable (more precise than float)
     cout << "Weight: " << weight << " kg" << endl;
 
-    // Character variable
-    char grade = 'A';
+    char grade = 'A';       // single character
     cout << "Grade: " << grade << endl;
 
-    // Boolean variable
-    bool isStudent = true;
-    cout << "Is Student? " << isStudent << endl; // prints 1 (true) or 0 (false)
+    bool isStudent = true;  // boolean variable (true or false)
+    cout << "Is Student? " << isStudent << endl; // 1 = true, 0 = false
 
-    // String variable
-    string name = "Umar";
+    string name = "Umar";   // string variable
     cout << "Name: " << name << endl;
 
     // =========================
     // 3️⃣ Constants
     // =========================
-    const double PI = 3.14159; // cannot be changed
+    const double PI = 3.14159; // cannot be changed later
     cout << "PI: " << PI << endl;
 
     // =========================
@@ -61,8 +60,7 @@ int main() {
     // =========================
     // 5️⃣ Type Casting
     // =========================
-    double result;
-    result = (double)x / y; // casting integer to double
+    double result = (double)x / y; // converting integer to double
     cout << "x / y = " << result << endl;
 
     // =========================
@@ -75,20 +73,19 @@ int main() {
 
     string userName;
     cout << "Enter your name: ";
-    cin.ignore(); // to ignore leftover newline from previous input
-    getline(cin, userName);
+    cin.ignore(); // ignore leftover newline from previous input
+    getline(cin, userName); // read full line
     cout << "Hello, " << userName << "!" << endl;
 
     // =========================
     // 7️⃣ More on variable types
     // =========================
-    
-    short s = 32767; // short integer
-    long l = 1234567890; // long integer
-    long long ll = 9876543210; // long long integer
-    unsigned int u = 4000000000; // unsigned integer (positive only)
-
-    cout << "Short: " << s << ", Long: " << l << ", Long Long: " << ll << ", Unsigned: " << u << endl;
+    short s = 32767;                // short integer
+    long l = 1234567890;            // long integer
+    long long ll = 9876543210;      // long long integer
+    unsigned int u = 4000000000;    // unsigned integer (positive only)
+    cout << "Short: " << s << ", Long: " << l 
+         << ", Long Long: " << ll << ", Unsigned: " << u << endl;
 
     // =========================
     // 8️⃣ Escape sequences
@@ -100,9 +97,9 @@ int main() {
     // =========================
     // 9️⃣ Formatting output
     // =========================
-    cout << fixed << setprecision(2); // 2 decimal places
+    cout << fixed << setprecision(2); // set 2 decimal places
     double price = 123.45678;
     cout << "Price: " << price << endl;
 
-    return 0;
+    return 0; // program ends
 }
