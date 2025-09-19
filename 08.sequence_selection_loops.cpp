@@ -1,23 +1,30 @@
+// This program demonstrates the basic control structures in C++:
+// 1. Sequence (simple statements executed in order)
+// 2. Selection (if-else and switch)
+// 3. Loops (for, while, do-while)
+
 #include <iostream>
 using namespace std;
 
 int main() {
+
     // =========================
-    // Sequence Structure
+    // 1️⃣ Sequence Structure
     // =========================
     cout << "===== Sequence Example =====" << endl;
     int a = 5, b = 10;
-    int sum = a + b;
+    int sum = a + b; // add two numbers
     cout << "Sum of " << a << " and " << b << " is " << sum << endl;
 
     // =========================
-    // Selection Structure
+    // 2️⃣ Selection Structure
     // =========================
     cout << "\n===== Selection Example =====" << endl;
     int num;
     cout << "Enter a number: ";
     cin >> num;
 
+    // if-else to check positive, negative, or zero
     if (num > 0) {
         cout << num << " is positive." << endl;
     } else if (num < 0) {
@@ -26,7 +33,7 @@ int main() {
         cout << "Number is zero." << endl;
     }
 
-    // Switch case example
+    // switch-case example
     int choice;
     cout << "Enter choice (1-3): ";
     cin >> choice;
@@ -46,17 +53,18 @@ int main() {
     }
 
     // =========================
-    // Loop Structures
+    // 3️⃣ Loop Structures
     // =========================
     cout << "\n===== Loop Examples =====" << endl;
 
-    // For loop
+    // For loop example
     cout << "For loop (1 to 5): ";
-    for(int i=1; i<=5; i++)
+    for(int i = 1; i <= 5; i++) {
         cout << i << " ";
+    }
     cout << endl;
 
-    // While loop
+    // While loop example
     cout << "While loop (1 to 5): ";
     int j = 1;
     while(j <= 5) {
@@ -65,7 +73,7 @@ int main() {
     }
     cout << endl;
 
-    // Do-while loop
+    // Do-while loop example
     cout << "Do-while loop (1 to 5): ";
     int k = 1;
     do {
@@ -74,5 +82,5 @@ int main() {
     } while(k <= 5);
     cout << endl;
 
-    return 0;
+    return 0; // program ends
 }
