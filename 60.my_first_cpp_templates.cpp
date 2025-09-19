@@ -1,24 +1,50 @@
+/*
+    This program demonstrates C++ templates:
+
+    1. Function template: a single function works for multiple data types.
+       Example: add integers, doubles, or strings using the same function.
+
+    2. Class template: a single class works for different data types.
+       Example: store and display int, double, or string values.
+*/
+
 #include <iostream>
 using namespace std;
 
-// Function Template (generic function)
+// Function template for addition
 template <typename T>
-T multiply(T a, T b) { // works for any data type
-    return a * b;
+T add(T a, T b) {
+    return a + b;  // works for any type that supports '+'
 }
 
+// Class template to store a value
+template <class T>
+class Box {
+    T value;  // can be any type
+public:
+    Box(T v) { value = v; }
+
+    void show() {
+        cout << "Value: " << value << endl;
+    }
+};
+
 int main() {
-    // Integer multiplication
-    int x = 5, y = 10;
-    cout << "Int multiplication: " << multiply(x, y) << endl;
+    // ✅ Using function template
+    cout << "Int addition: " << add(5, 10) << endl;
+    cout << "Double addition: " << add(3.5, 2.7) << endl;
+    cout << "String addition: " << add(string("Hello "), string("Umar")) << endl;
 
-    // Double multiplication
-    double p = 3.5, q = 2.0;
-    cout << "Double multiplication: " << multiply(p, q) << endl;
+    cout << "-----------------------------" << endl;
 
-    // Long multiplication
-    long a = 1000, b = 2000;
-    cout << "Long multiplication: " << multiply(a, b) << endl;
+    // ✅ Using class template
+    Box<int> intBox(100);
+    Box<double> doubleBox(3.14);
+    Box<string> strBox("Template Example");
+
+    intBox.show();
+    doubleBox.show();
+    strBox.show();
 
     return 0;
 }
