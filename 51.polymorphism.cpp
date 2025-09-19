@@ -1,10 +1,23 @@
+/*
+    This program demonstrates **polymorphism** in C++:
+
+    1. Compile-time polymorphism (Function Overloading):
+       - The Math class has two "add" functions: one for integers, one for doubles.
+       - The compiler decides which function to call based on the arguments.
+
+    2. Runtime polymorphism (Function Overriding):
+       - The Animal class has a virtual function "sound".
+       - Dog and Cat classes override the "sound" function.
+       - A base class pointer can call the overridden function at runtime.
+*/
+
 #include <iostream>
 using namespace std;
 
 // Base Class
 class Animal {
 public:
-    // Virtual function (supports runtime polymorphism)
+    // Virtual function allows runtime polymorphism
     virtual void sound() {
         cout << "Animal makes a sound." << endl;
     }
@@ -15,7 +28,7 @@ public:
     }
 };
 
-// Derived Class 1
+// Derived Class: Dog
 class Dog : public Animal {
 public:
     void sound() override {   // Overriding base class function
@@ -23,45 +36,51 @@ public:
     }
 };
 
-// Derived Class 2
+// Derived Class: Cat
 class Cat : public Animal {
 public:
-    void sound() override {
+    void sound() override {   // Overriding base class function
         cout << "Cat meows: Meow! Meow!" << endl;
     }
 };
 
-// Function Overloading (Compile-time polymorphism)
+// Class demonstrating Function Overloading (Compile-time polymorphism)
 class Math {
 public:
-    int add(int a, int b) {
+    int add(int a, int b) {         // Add integers
         return a + b;
     }
 
-    double add(double a, double b) {
+    double add(double a, double b) { // Add doubles
         return a + b;
     }
 };
 
 int main() {
-    // ✅ Compile-time Polymorphism (Function Overloading)
+    // -------------------------------
+    // Compile-time Polymorphism
+    // -------------------------------
     Math m;
-    cout << "Sum (int): " << m.add(5, 10) << endl;
-    cout << "Sum (double): " << m.add(2.5, 3.7) << endl;
+    cout << "Sum of integers: " << m.add(5, 10) << endl;
+    cout << "Sum of doubles: " << m.add(2.5, 3.7) << endl;
 
-    cout << "------------------------" << endl;
+    cout << "-------------------------------" << endl;
 
-    // ✅ Runtime Polymorphism (Function Overriding)
-    Animal* animal1;  // Base class pointer
+    // -------------------------------
+    // Runtime Polymorphism
+    // -------------------------------
+    Animal* animalPtr;  // Base class pointer
 
     Dog d;
     Cat c;
 
-    animal1 = &d;  
-    animal1->sound();   // Calls Dog's sound()
+    // Pointer to Dog object
+    animalPtr = &d;  
+    animalPtr->sound();   // Calls Dog's sound() because of virtual function
 
-    animal1 = &c;  
-    animal1->sound();   // Calls Cat's sound()
+    // Pointer to Cat object
+    animalPtr = &c;  
+    animalPtr->sound();   // Calls Cat's sound()
 
     return 0;
 }
