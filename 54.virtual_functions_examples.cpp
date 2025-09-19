@@ -1,26 +1,34 @@
+/*
+    This program demonstrates **runtime polymorphism with shapes**:
+
+    1. Base class `Shape` has a virtual function `area()`.
+    2. Derived classes `Circle`, `Rectangle`, and `Triangle` override `area()`.
+    3. A base class pointer can point to any derived class object.
+    4. At runtime, the correct `area()` function is called depending on the object.
+*/
+
 #include <iostream>
 using namespace std;
 
-// Base Class
+// Base class
 class Shape {
 public:
-    // Virtual function → to be overridden in derived classes
-    virtual void area() {
+    virtual void area() {  // Virtual function
         cout << "Generic shape area." << endl;
     }
 };
 
-// Derived Class 1
+// Derived class: Circle
 class Circle : public Shape {
     double radius;
 public:
     Circle(double r) : radius(r) {}
-    void area() override {
+    void area() override {  // Override base class function
         cout << "Circle Area = " << 3.14 * radius * radius << endl;
     }
 };
 
-// Derived Class 2
+// Derived class: Rectangle
 class Rectangle : public Shape {
     double length, width;
 public:
@@ -30,7 +38,7 @@ public:
     }
 };
 
-// Derived Class 3
+// Derived class: Triangle
 class Triangle : public Shape {
     double base, height;
 public:
@@ -41,24 +49,23 @@ public:
 };
 
 int main() {
-    // Base class pointer
-    Shape* shapePtr;
+    Shape* shapePtr;  // Base class pointer
 
     Circle c(5);
     Rectangle r(4, 6);
     Triangle t(3, 7);
 
-    // Pointing to Circle
+    // Pointer points to Circle
     shapePtr = &c;
-    shapePtr->area();
+    shapePtr->area();  // Calls Circle's area()
 
-    // Pointing to Rectangle
+    // Pointer points to Rectangle
     shapePtr = &r;
-    shapePtr->area();
+    shapePtr->area();  // Calls Rectangle's area()
 
-    // Pointing to Triangle
+    // Pointer points to Triangle
     shapePtr = &t;
-    shapePtr->area();
+    shapePtr->area();  // Calls Triangle's area()
 
     return 0;
 }
