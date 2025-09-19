@@ -1,46 +1,57 @@
+// This program demonstrates different operators in C++:
+// 1. Arithmetic Operators
+// 2. Assignment Operators
+// 3. Increment and Decrement
+// 4. Comparison Operators
+// 5. Logical Operators
+// 6. Bitwise Operators
+// 7. Using <cmath> functions
+
 #include <iostream>  // for input/output
-#include <cmath>     // for math functions
-#include <iomanip>   // for formatting
+#include <cmath>     // for math functions like pow, sqrt, abs
+#include <iomanip>   // for formatting output (not used here but included for practice)
+
 using namespace std;
 
 int main() {
+
     // =========================
-    // Arithmetic Operators
+    // 1️⃣ Arithmetic Operators
     // =========================
     int a = 10, b = 3;
     cout << "a + b = " << a + b << endl;
     cout << "a - b = " << a - b << endl;
     cout << "a * b = " << a * b << endl;
-    cout << "a / b = " << a / b << endl;     // integer division
-    cout << "a % b = " << a % b << endl;     // modulus
-    cout << "a^b using pow(): " << pow(a, b) << endl; // math function
+    cout << "a / b = " << a / b << " (integer division)" << endl;
+    cout << "a % b = " << a % b << " (remainder)" << endl;
+    cout << "a^b using pow(): " << pow(a, b) << endl;
 
     // =========================
-    // Assignment Operators
+    // 2️⃣ Assignment Operators
     // =========================
     int x = 5;
-    x += 3; // x = x + 3
+    x += 3; // same as x = x + 3
     cout << "x after += 3: " << x << endl;
-    x -= 2;
+    x -= 2; // x = x - 2
     cout << "x after -= 2: " << x << endl;
-    x *= 4;
+    x *= 4; // x = x * 4
     cout << "x after *= 4: " << x << endl;
-    x /= 3;
+    x /= 3; // x = x / 3
     cout << "x after /= 3: " << x << endl;
-    x %= 2;
+    x %= 2; // x = x % 2
     cout << "x after %= 2: " << x << endl;
 
     // =========================
-    // Increment & Decrement
+    // 3️⃣ Increment & Decrement
     // =========================
     int i = 10;
-    cout << "i++: " << i++ << endl; // post-increment
-    cout << "++i: " << ++i << endl; // pre-increment
-    cout << "i--: " << i-- << endl; // post-decrement
-    cout << "--i: " << --i << endl; // pre-decrement
+    cout << "i++ (post-increment): " << i++ << endl;
+    cout << "++i (pre-increment): " << ++i << endl;
+    cout << "i-- (post-decrement): " << i-- << endl;
+    cout << "--i (pre-decrement): " << --i << endl;
 
     // =========================
-    // Comparison Operators
+    // 4️⃣ Comparison Operators
     // =========================
     int p = 5, q = 7;
     cout << "p == q: " << (p == q) << endl;
@@ -51,33 +62,33 @@ int main() {
     cout << "p <= q: " << (p <= q) << endl;
 
     // =========================
-    // Logical Operators
+    // 5️⃣ Logical Operators
     // =========================
     bool A = true, B = false;
-    cout << "A && B: " << (A && B) << endl; // AND
-    cout << "A || B: " << (A || B) << endl; // OR
-    cout << "!A: " << (!A) << endl;         // NOT
+    cout << "A && B: " << (A && B) << " (AND)" << endl;
+    cout << "A || B: " << (A || B) << " (OR)" << endl;
+    cout << "!A: " << (!A) << " (NOT)" << endl;
 
     // =========================
-    // Bitwise Operators
+    // 6️⃣ Bitwise Operators
     // =========================
-    int m = 5, n = 9; // binary: m=0101, n=1001
-    cout << "m & n: " << (m & n) << endl; // AND
-    cout << "m | n: " << (m | n) << endl; // OR
-    cout << "m ^ n: " << (m ^ n) << endl; // XOR
-    cout << "~m: " << (~m) << endl;       // NOT
-    cout << "m << 1: " << (m << 1) << endl; // left shift
-    cout << "n >> 1: " << (n >> 1) << endl; // right shift
+    int m = 5, n = 9; // m=0101, n=1001 in binary
+    cout << "m & n: " << (m & n) << " (AND)" << endl;
+    cout << "m | n: " << (m | n) << " (OR)" << endl;
+    cout << "m ^ n: " << (m ^ n) << " (XOR)" << endl;
+    cout << "~m: " << (~m) << " (NOT)" << endl;
+    cout << "m << 1: " << (m << 1) << " (left shift)" << endl;
+    cout << "n >> 1: " << (n >> 1) << " (right shift)" << endl;
 
     // =========================
-    // Miscellaneous / Header Files Usage
+    // 7️⃣ Using <cmath> functions
     // =========================
     double value = -12.75;
     cout << "\nUsing <cmath> functions:" << endl;
-    cout << "abs(value): " << abs(value) << endl;
-    cout << "ceil(value): " << ceil(value) << endl;
-    cout << "floor(value): " << floor(value) << endl;
-    cout << "sqrt(16): " << sqrt(16) << endl;
+    cout << "abs(value): " << abs(value) << endl;     // absolute value
+    cout << "ceil(value): " << ceil(value) << endl;   // round up
+    cout << "floor(value): " << floor(value) << endl; // round down
+    cout << "sqrt(16): " << sqrt(16) << endl;         // square root
 
-    return 0;
+    return 0; // end of program
 }
